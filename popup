@@ -1,0 +1,17 @@
+let dialogRef = dialog.open(UserProfileComponent, {
+  height: '400px',
+  width: '600px',
+});
+@Component({/* ... */})
+export class YourDialog {
+  constructor(public dialogRef: MatDialogRef<YourDialog>) { }
+
+  closeDialog() {
+    this.dialogRef.close('Pizza!');
+  }
+}
+@NgModule({
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ]
+})
